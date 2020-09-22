@@ -1,0 +1,53 @@
+/*** VARIABLES ***/
+
+/*** Colors ***/
+
+$color-white: #fff;
+$color-gray: #ccc;
+$color-black: #000;
+
+// Gradient
+
+$gradient-one: #11998e;
+$gradient-two: #38ef7d;
+
+/*** BORDER ***/
+
+$border: 1px solid $color-black;
+
+/*** MIXINS ***/
+
+// Body linear gradient
+
+@mixin linear-gradient {
+	background-image: linear-gradient(
+		to right bottom,
+		$gradient-one,
+		$gradient-two
+	);
+}
+
+// Image
+
+@mixin background-image {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*** RESPONSIVE LAYOUT ***/
+
+$breakpoints: (
+	xs: 32rem,
+	sm: 48rem,
+	md: 64rem,
+	lg: 80rem,
+	xl: 90rem,
+) !default;
+
+@mixin breakpoint($breakpoints) {
+	@media (min-width: map-get($map: $breakpoints, $key:
+        $breakpoints)) {
+		@content;
+	}
+}

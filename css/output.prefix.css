@@ -1,0 +1,24 @@
+
+/*** Imports ***/
+/*** Global Settings ***/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box; }
+
+body {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif; }
+
+/*** VARIABLES ***/
+/*** Colors ***/
+/*** BORDER ***/
+/*** MIXINS ***/
+/*** RESPONSIVE LAYOUT ***/
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm91dHB1dC5jb25jYXQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQSxnQkFBZ0I7QUFDaEIsd0JBQXdCO0FBQ3hCOzs7RUFHRSxVQUFVO0VBQ1YsU0FBUztFQUNULG1CQUFtQixFQUFFOztBQUV2QjtFQUNFLHNCQUFzQixFQUFFOztBQUUxQjtFQUNFLGdCQUFnQjtFQUNoQixxQ0FBcUMsRUFBRTs7QUFFekMsa0JBQWtCO0FBQ2xCLGVBQWU7QUFDZixlQUFlO0FBQ2YsZUFBZTtBQUNmLDBCQUEwQiIsImZpbGUiOiJvdXRwdXQucHJlZml4LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxuLyoqKiBJbXBvcnRzICoqKi9cbi8qKiogR2xvYmFsIFNldHRpbmdzICoqKi9cbiosXG4qOjpiZWZvcmUsXG4qOjphZnRlciB7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMDtcbiAgYm94LXNpemluZzogaW5oZXJpdDsgfVxuXG5odG1sIHtcbiAgYm94LXNpemluZzogYm9yZGVyLWJveDsgfVxuXG5ib2R5IHtcbiAgZm9udC1zaXplOiA2Mi41JTtcbiAgZm9udC1mYW1pbHk6ICdNb250c2VycmF0Jywgc2Fucy1zZXJpZjsgfVxuXG4vKioqIFZBUklBQkxFUyAqKiovXG4vKioqIENvbG9ycyAqKiovXG4vKioqIEJPUkRFUiAqKiovXG4vKioqIE1JWElOUyAqKiovXG4vKioqIFJFU1BPTlNJVkUgTEFZT1VUICoqKi9cbiJdfQ== */
