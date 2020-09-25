@@ -4,32 +4,43 @@ const input = document.querySelector('.main__input');
 const button = document.querySelector('.main__button');
 const list = document.querySelector('.main__list');
 
+// global declarations
+
 //event listeners
 
-button.addEventListener('click', todoAdd);
+button.addEventListener('click', todoAddOnClick);
+input.addEventListener('keypress', todoOnKeypress);
 
 //functions
 
-function todoAdd(e) {
-	//preventing the form form submitting
-	event.preventDefault();
-	//todo Div
-	const todoDiv = document.createElement('div');
-	todoDiv.classList.add('todo');
-	//create Li
-	const newTodo = document.createElement('li');
-	newTodo.innerText = this.value;
-	newTodo.classList.add('main__item');
-    todoDiv.appendChild(newTodo);
-    //completed button
-    const completeButton = document.createElement('button');
-    completeButton.innerHTML = '<ion-icon name="checkmark"></ion-icon>';
-    completeButton.classList.add("complete-btn");
-    todoDiv.appendChild(completeButton);
-    //delete button
-    const deleteButton = document.querySelector('button');
-    deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon>';
-    todoDiv.appendChild(deleteButton);
-    //append
-    list.appendChild(todoDiv);
+//when plus icon is clicked
+function todoAddOnClick(e) {
+	// Creating the div
+	const mainDiv = document.createElement('div');
+	//create list
+	const mainItems = document.createElement('li');
+	//adding content to item from input and adding a class
+	mainItems.innerText = input.value;
+	mainItems.classList.add('main__items');
+	//adding li to div and adding a class to div.
+	mainDiv.appendChild(mainItems);
+	mainDiv.classList.add('main__div');
+	//adding completed and delete buttons
+	const completedButton = document.createElement('button');
+	const deleteButton = document.createElement('button');
+	// adding icons to buttons
+	completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
+	deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon';
+	// giving icons a class
+	completedButton.classList.add('main__icons-button');
+	deleteButton.classList.add('main__icons-button');
+	//adding list and icons to div
+	mainDiv.appendChild(completedButton);
+	mainDiv.appendChild(deleteButton);
+	//append div to unordered list
+	list.appendChild(mainDiv);
+	//set the input to nothing when input is added
+	input.value = '';
+	// if you click without an input, nothing must appear
 }
+

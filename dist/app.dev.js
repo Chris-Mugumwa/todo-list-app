@@ -3,30 +3,38 @@
 //Selectors
 var input = document.querySelector('.main__input');
 var button = document.querySelector('.main__button');
-var list = document.querySelector('.main__list'); //event listeners
+var list = document.querySelector('.main__list'); // global declarations
+//event listeners
 
-button.addEventListener('click', todoAdd); //functions
+button.addEventListener('click', todoAddOnClick);
+input.addEventListener('keypress', todoOnKeypress); //functions
+//when plus icon is clicked
 
-function todoAdd(e) {
-  //preventing the form form submitting
-  event.preventDefault(); //todo Div
+function todoAddOnClick(e) {
+  // Creating the div
+  var mainDiv = document.createElement('div'); //create list
 
-  var todoDiv = document.createElement('div');
-  todoDiv.classList.add('todo'); //create Li
+  var mainItems = document.createElement('li'); //adding content to item from input and adding a class
 
-  var newTodo = document.createElement('li');
-  newTodo.innerText = this.value;
-  newTodo.classList.add('main__item');
-  todoDiv.appendChild(newTodo); //completed button
+  mainItems.innerText = input.value;
+  mainItems.classList.add('main__items'); //adding li to div and adding a class to div.
 
-  var completeButton = document.createElement('button');
-  completeButton.innerHTML = '<ion-icon name="checkmark"></ion-icon>';
-  completeButton.classList.add("complete-btn");
-  todoDiv.appendChild(completeButton); //delete button
+  mainDiv.appendChild(mainItems);
+  mainDiv.classList.add('main__div'); //adding completed and delete buttons
 
-  var deleteButton = document.querySelector('button');
-  deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon>';
-  todoDiv.appendChild(deleteButton); //append
+  var completedButton = document.createElement('button');
+  var deleteButton = document.createElement('button'); // adding icons to buttons
 
-  list.appendChild(todoDiv);
+  completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
+  deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon'; // giving icons a class
+
+  completedButton.classList.add('main__icons-button');
+  deleteButton.classList.add('main__icons-button'); //adding list and icons to div
+
+  mainDiv.appendChild(completedButton);
+  mainDiv.appendChild(deleteButton); //append div to unordered list
+
+  list.appendChild(mainDiv); //set the input to nothing when input is added
+
+  input.value = ''; // if you click without an input, nothing must appear
 }

@@ -11,7 +11,7 @@ html {
 }
 
 body {
-	font-family: 'Montserrat'sans-serif;
+	font-family: 'Montserrat' sans-serif;
 	font-size: 62.5%;
 	line-height: 1.6;
 	height: 100vh;
@@ -62,8 +62,10 @@ body {
 
 .main__list {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	list-style: none;
+	padding: 0 1rem;
 }
 
 .main__bottom {
@@ -112,16 +114,55 @@ body {
 
 /** List items that will be added from entry **/
 
-.main__items {
+/** div class **/
+
+.main__div {
+	font-family: 'Montserrat';
+	font-size: .7rem;
+	width: 100%;
+	max-width: 100%;
+	margin: 0.5rem;
 	padding: 0.5rem;
-	background-color: #fff;
-	list-style: none;
-	font-size: 1.2rem;
 	text-align: center;
-	width: 70%;
-	max-width: 70%;
+	font-size: 1.2rem;
+	padding: 0.1rem 0.5rem;
+
+	display: flex;
+	align-items: center;
 }
 
-.main__items-icons {
-	height: 0.5rem;
+/** list items **/
+.main__items {
+	background-color: #fff;
+	list-style: none;
+	border-radius: 1000px;
+	width: 85%;
+	max-width: 85%;
+	margin: 0 0.2rem;
+}
+
+/** checked and deleted icons **/
+.main__icons-button {
+	border: none;
+	padding: 0.5rem;
+	margin: 0 0.2rem;
+	background-color: #fff;
+	border-radius: 50%;
+	outline: none;
+	cursor: pointer;
+	transition: .5s;
+
+	display: flex;
+}
+
+.main__icons-button:hover {
+	background-color: rgb(136, 131, 131);
+}
+
+.main__icons-button:active {
+	background-color: rgb(124, 122, 122);
+}
+
+.main__icons {
+	height: 1rem;
 }
