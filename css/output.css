@@ -57,7 +57,11 @@ body {
 	height: 50%;
 	background-color: #ccc;
 	border-bottom: 1px solid #ccc;
-	overflow: hidden;
+	overflow: auto;
+}
+
+.main__middle::-webkit-scrollbar {
+	display: none;
 }
 
 .main__list {
@@ -118,7 +122,7 @@ body {
 
 .main__div {
 	font-family: 'Montserrat';
-	font-size: .7rem;
+	font-size: 0.7rem;
 	width: 100%;
 	max-width: 100%;
 	margin: 0.5rem;
@@ -150,7 +154,7 @@ body {
 	border-radius: 50%;
 	outline: none;
 	cursor: pointer;
-	transition: .5s;
+	transition: 0.5s;
 
 	display: flex;
 }
@@ -166,3 +170,17 @@ body {
 .main__icons {
 	height: 1rem;
 }
+
+/**when complete and delete button are clicked **/
+
+.completed__button {
+	text-decoration: line-through;
+	opacity: 50%;
+	transition: .4s;
+}
+
+.delete__button {
+	display: none;
+	transition: .7s;
+}
+
