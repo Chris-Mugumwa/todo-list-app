@@ -1,90 +1,88 @@
 "use strict";
 
-//Selectors
+/*****SELECTORS*****/
 var input = document.querySelector('.main__input');
 var button = document.querySelector('.main__button');
-var list = document.querySelector('.main__list'); // global declarations
-//event listeners
+var list = document.querySelector('.main__list');
+/*****EVENTS*****/
 
 button.addEventListener('click', todoAddOnClick);
-input.addEventListener('keypress', todoOnKeypress); //functions
-//when plus icon is clicked
+input.addEventListener('keypress', todoOnKeypress);
+/*****FUNCTIONS*****/
 
 function todoAddOnClick(e) {
-  // Creating the div
-  var mainDiv = document.createElement('div'); //create list
-
-  var mainItems = document.createElement('li'); //adding content to item from input and adding a class
-
-  mainItems.innerText = input.value;
-  mainItems.classList.add('main__items'); //adding li to div and adding a class to div.
-
-  mainDiv.appendChild(mainItems);
-  mainDiv.classList.add('main__div'); //adding completed and delete buttons
-
+  //creating new elements
+  var mainDiv = document.createElement('div');
+  var mainItems = document.createElement('li');
   var completedButton = document.createElement('button');
-  var deleteButton = document.createElement('button'); // adding icons to buttons
+  var deleteButton = document.createElement('button');
 
-  completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
-  deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon'; // giving icons a class
+  if (input.value !== '') {
+    //setting new element content
+    mainItems.innerText = input.value;
+    completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
+    deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon'; //adding classes to new elements
 
-  completedButton.classList.add('main__icons-button');
-  deleteButton.classList.add('main__icons-button'); //adding list and icons to div
+    mainItems.classList.add('main__items');
+    mainDiv.classList.add('main__div');
+    completedButton.classList.add('main__icons-button');
+    deleteButton.classList.add('main__icons-button'); //appending new elements to html
 
-  mainDiv.appendChild(completedButton);
-  mainDiv.appendChild(deleteButton); //append div to unordered list
+    mainDiv.appendChild(mainItems);
+    mainDiv.appendChild(completedButton);
+    mainDiv.appendChild(deleteButton);
+    list.appendChild(mainDiv); //deleting text from input
 
-  list.appendChild(mainDiv); //set the input to nothing when input is added
+    input.value = ''; //Completed Button event
 
-  input.value = ''; //Completed Button
+    completedButton.addEventListener('click', function (e) {
+      mainItems.classList.add('completed__button');
+    }); //Delete Button event
 
-  completedButton.addEventListener('click', function (e) {
-    console.log('hello');
-    mainItems.classList.add('completed__button');
-  }); //Delete Button
-
-  deleteButton.addEventListener('click', function (e) {
-    console.log('hello');
-    mainDiv.classList.add('delete__button');
-  });
+    deleteButton.addEventListener('click', function (e) {
+      mainDiv.classList.add('delete__button');
+    });
+  } else {
+    return false;
+  }
 } // on keypress
 
 
 function todoOnKeypress(e) {
   if (e.key === 'Enter') {
-    // Creating the div
-    var mainDiv = document.createElement('div'); //create list
-
-    var mainItems = document.createElement('li'); //adding content to item from input and adding a class
-
-    mainItems.innerText = input.value;
-    mainItems.classList.add('main__items'); //adding li to div and adding a class to div.
-
-    mainDiv.appendChild(mainItems);
-    mainDiv.classList.add('main__div'); //adding completed and delete buttons
-
+    //creating new elements
+    var mainDiv = document.createElement('div');
+    var mainItems = document.createElement('li');
     var completedButton = document.createElement('button');
-    var deleteButton = document.createElement('button'); // adding icons to buttons
+    var deleteButton = document.createElement('button');
 
-    completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
-    deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon'; // giving icons a class
+    if (input.value !== '') {
+      //setting new element content
+      mainItems.innerText = input.value;
+      completedButton.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
+      deleteButton.innerHTML = '<ion-icon name="trash-bin-outline"></ion-icon'; //adding classes to new elements
 
-    completedButton.classList.add('main__icons-button');
-    deleteButton.classList.add('main__icons-button'); //adding list and icons to div
+      mainItems.classList.add('main__items');
+      mainDiv.classList.add('main__div');
+      completedButton.classList.add('main__icons-button');
+      deleteButton.classList.add('main__icons-button'); //appending new elements to html
 
-    mainDiv.appendChild(completedButton);
-    mainDiv.appendChild(deleteButton); //append div to unordered list
+      mainDiv.appendChild(mainItems);
+      mainDiv.appendChild(completedButton);
+      mainDiv.appendChild(deleteButton);
+      list.appendChild(mainDiv); //deleting text from input
 
-    list.appendChild(mainDiv); //set the input to nothing when input is added
+      input.value = ''; //Completed Button event
 
-    input.value = ''; //Completed Button
+      completedButton.addEventListener('click', function (e) {
+        mainItems.classList.add('completed__button');
+      }); //Delete Button event
 
-    completedButton.addEventListener('click', function (e) {
-      mainItems.classList.add('completed__button');
-    }); //Delete Button
-
-    deleteButton.addEventListener('click', function (e) {
-      mainDiv.classList.add('delete__button');
-    });
+      deleteButton.addEventListener('click', function (e) {
+        mainDiv.classList.add('delete__button');
+      });
+    } else {
+      return false;
+    }
   }
 }
