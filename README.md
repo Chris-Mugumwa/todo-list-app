@@ -1,5 +1,8 @@
 # todo-list-app
-to do list app 
+todo list application
+
+# built with: 
+HTML, CSS, Javascript.
 
 # Live Preview
 
